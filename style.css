@@ -472,35 +472,48 @@ body {
   color: var(--dark-blue);
 }
 
-/* 展示・発表記録リスト */
+/* 展示・発表記録（CSS調整） */
 .history-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .history-list li {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 15px;
   font-size: 0.95rem;
+  flex-wrap: wrap;
 }
 
-.history-date {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  color: var(--dark-blue);
-  background-color: var(--bg-color);
-  padding: 2px 8px;
-  border-radius: 4px;
-  border: 1px solid var(--border-cyan);
-  font-size: 0.85rem;
-  flex-shrink: 0;
+.history-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .history-event {
   color: var(--text-main);
+  font-weight: 700;
+}
+
+.history-link {
+  font-size: 0.8rem;
+  color: var(--dark-blue);
+  border: 1px solid var(--border-cyan);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+}
+
+.history-link:hover {
+  background-color: var(--neon-cyan);
+  color: var(--dark-blue);
 }
 
 /* 下部ボタン */
