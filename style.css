@@ -543,3 +543,104 @@ body {
     gap: 4px;
   }
 }
+
+/* ==========================================
+   7. アニメーション & インタラクション強化
+   ========================================== */
+
+/* ① ページ読み込み時の要素フワッと表示 (Fade-in-Up) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ② ヘッダーロゴのグロー（発光）ホバー効果 */
+.header-inner .logo {
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.header-inner .logo:hover {
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+  transform: scale(1.03);
+}
+
+/* ③ 作品カードの画像ズーム＆枠線発光 */
+.work-image-container {
+  overflow: hidden;
+}
+
+.work-image {
+  transition: transform 0.5s ease;
+}
+
+.work-card:hover .work-image {
+  transform: scale(1.08); /* ホバー時に画像をゆっくり拡大 */
+}
+
+.work-card {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.3s ease, 
+              border-color 0.3s ease;
+}
+
+.work-card:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+}
+
+/* ④ プロフィールアバターのサイバー回転リング効果 */
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px dashed var(--neon-cyan);
+  animation: rotate-ring 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate-ring {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ⑤ サイバーボタンのパルス波紋効果 */
+.cyber-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease-out, height 0.4s ease-out;
+}
+
+.cyber-btn:hover::before {
+  width: 200px;
+  height: 200px;
+}
