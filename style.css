@@ -318,3 +318,215 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ==========================================
+   6. 作品詳細ページ (work-detail.html)
+   ========================================== */
+
+/* 詳細ヘッダー */
+.detail-header {
+  margin-bottom: 30px;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--dark-blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 15px;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--neon-cyan);
+}
+
+.detail-tag {
+  display: inline-block;
+  background-color: var(--dark-blue);
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.detail-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--dark-blue);
+  line-height: 1.3;
+}
+
+/* 詳細カードコンテナ */
+.detail-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-cyan);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--dark-blue), var(--neon-cyan), var(--dark-blue));
+}
+
+/* 各セクションブロック */
+.detail-section {
+  margin-bottom: 40px;
+}
+
+.section-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  color: var(--dark-blue);
+  margin-bottom: 15px;
+  letter-spacing: 0.1em;
+  border-bottom: 1.5px dashed var(--neon-cyan);
+  padding-bottom: 6px;
+}
+
+/* メディア（画像・動画）スタイル */
+.media-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-cyan);
+  background-color: var(--dark-blue);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* アスペクト比16:9を維持する動画プレイヤー */
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* コンテンツボックス */
+.content-box {
+  background-color: #f8fafc;
+  border-left: 4px solid var(--neon-cyan);
+  padding: 20px 25px;
+  border-radius: 0 8px 8px 0;
+}
+
+.text-block {
+  font-size: 1rem;
+  color: var(--text-main);
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+/* 開発担当箇所リスト */
+.role-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.role-list li {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  position: relative;
+  padding-left: 18px;
+}
+
+.role-list li::before {
+  content: '■';
+  color: var(--dark-blue);
+  font-size: 0.7rem;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.role-list strong {
+  color: var(--dark-blue);
+}
+
+/* 展示・発表記録リスト */
+.history-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  font-size: 0.95rem;
+}
+
+.history-date {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: var(--dark-blue);
+  background-color: var(--bg-color);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-cyan);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.history-event {
+  color: var(--text-main);
+}
+
+/* 下部ボタン */
+.detail-footer-btn {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.big-btn {
+  padding: 12px 30px;
+}
+
+/* スマホ表示対応 */
+@media (max-width: 768px) {
+  .detail-card {
+    padding: 20px;
+  }
+
+  .detail-title {
+    font-size: 1.7rem;
+  }
+
+  .history-list li {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
