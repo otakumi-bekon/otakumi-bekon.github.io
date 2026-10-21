@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>作品詳細 | 作品タイトル - PORTFOLIO</title>
+  <title>キューブでポン | 作品詳細 - PORTFOLIO</title>
   <link rel="stylesheet" href="style.css">
   <!-- Google Fonts: Orbitron & Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,8 +25,9 @@
     <!-- 1. 作品タイトル -->
     <div class="detail-header">
       <a href="index.html" class="back-link">← TOPへ戻る</a>
-      <span class="detail-tag">Game / Hardware</span>
-      <h1 class="detail-title">作品タイトル</h1>
+      <br>
+      <span class="detail-tag">Game / Hardware / Vision</span>
+      <h1 class="detail-title">キューブでポン</h1>
     </div>
 
     <!-- 作品内容メインカード -->
@@ -36,7 +37,8 @@
       <section class="detail-section">
         <h2 class="section-label">01. GALLERY</h2>
         <div class="media-container">
-          <img src="https://via.placeholder.com/900x500/092070/00d2ff?text=Work+Main+Image" alt="作品画像" class="detail-image">
+          <!-- 画像挿入の準備（パスを書き換えてご使用ください） -->
+          <img src="https://via.placeholder.com/900x500/092070/00d2ff?text=キューブでポン+メイン画像" alt="キューブでポン 作品画像" class="detail-image">
         </div>
       </section>
 
@@ -44,19 +46,14 @@
       <section class="detail-section">
         <h2 class="section-label">02. MOVIE</h2>
         <div class="media-container video-wrapper">
-          <!-- YouTube埋め込みの場合（embed用のURLをsrcに設定） -->
+          <!-- 動画挿入の準備（YouTube埋め込みや<video>タグに置き換えてご使用ください） -->
           <iframe 
             src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-            title="作品プロモーション動画" 
+            title="キューブでポン プレイ動画" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
           </iframe>
-          <!-- ローカル動画を使う場合は以下に差替え可能です
-          <video controls poster="https://via.placeholder.com/900x500">
-            <source src="video.mp4" type="video/mp4">
-          </video>
-          -->
         </div>
       </section>
 
@@ -65,9 +62,8 @@
         <h2 class="section-label">03. MY ROLE</h2>
         <div class="content-box">
           <ul class="role-list">
-            <li><strong>担当領域:</strong> 独自物理コントローラーの設計・実装 / C++ GDExtensionモジュール開発</li>
-            <li><strong>ハードウェア:</strong> マイコン（M5StickC Plus2）、3軸加速度センサー制御・シリアル通信</li>
-            <li><strong>ソフトウェア:</strong> OpenCVを用いた画像認識処理、Godot Engine（GDScript）統合</li>
+            <li><strong>ゲームシステム設計・開発:</strong> Unity (C#)</li>
+            <li><strong>ルービックキューブ認識システム開発:</strong> C++ / OpenCV</li>
           </ul>
         </div>
       </section>
@@ -77,7 +73,8 @@
         <h2 class="section-label">04. GAME OVERVIEW</h2>
         <div class="content-box">
           <p class="text-block">
-            身の回りの日常品をそのままゲームコントローラーとして使用する体験型リズムゲームです。加速度センサーを搭載したジョッキ型デバイスを傾けたり乾杯させたりすることで、画面上のノーツと連動した直感的な操作が楽しめます。
+            ルービックキューブをコントローラーに使用したインタラクションゲームです。ルービックキューブとデジタルゲームを組み合わせることで、ルービックキューブの新たな遊び方を提案しました。
+            ゲーム内に提示されたランダムな配色の一面（9マス）のみを揃えることで、スコアを稼いでいくシステムになっています。
           </p>
         </div>
       </section>
@@ -87,7 +84,8 @@
         <h2 class="section-label">05. CONCEPT & THOUGHTS</h2>
         <div class="content-box concept-box">
           <p class="text-block">
-            「ふだん使うものが、ゲームになる。」というコンセプトのもと、プレイヤーが説明書なしで直感的に遊べる体感設計を目指しました。デジタル画面の演出だけでなく、手元にある実物触感やノイズを取り除いたセンサー入力制御にこだわり、ゲームセンターのような没入感を構築しています。
+            ルービックキューブという完成された遊びにデジタルゲームを掛け合わせることで、遊び方を拡張しました。
+            6面全体を一色に揃えるのではなく、ランダムな配色の一面に揃えるというルールにすることで、初心者も挑戦しやすく、上級者にもいつもとは一風変わった遊び方を提供できます。
           </p>
         </div>
       </section>
@@ -98,12 +96,32 @@
         <div class="content-box">
           <ul class="history-list">
             <li>
-              <span class="history-date">2026.09</span>
-              <span class="history-event">大学祭 作品展示ブース出展（インタラクティブ体験コーナー）</span>
+              <span class="history-date">2023</span>
+              <div class="history-content">
+                <span class="history-event">ゲームマーケット2023春</span>
+                <a href="https://gamemarket.jp/gamemarket/2023s" target="_blank" rel="noopener noreferrer" class="history-link">公式サイト ↗</a>
+              </div>
             </li>
             <li>
-              <span class="history-date">2026.08</span>
-              <span class="history-event">インディーゲーム展示イベント 出展＆口頭発表</span>
+              <span class="history-date">2023</span>
+              <div class="history-content">
+                <span class="history-event">BitSummit2023</span>
+                <a href="https://bitsummit.org/2023/" target="_blank" rel="noopener noreferrer" class="history-link">公式サイト ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="history-date">2023</span>
+              <div class="history-content">
+                <span class="history-event">TOKYO GAME SHOW 2023 （出展：「キューブでポン！」）</span>
+                <a href="https://expo.nikkeibp.co.jp/tgs/2023/jp/" target="_blank" rel="noopener noreferrer" class="history-link">公式サイト ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="history-date">2023</span>
+              <div class="history-content">
+                <span class="history-event">BIC (Busan Indie Connect Festival)</span>
+                <a href="https://bicfest.org/" target="_blank" rel="noopener noreferrer" class="history-link">公式サイト ↗</a>
+              </div>
             </li>
           </ul>
         </div>
