@@ -115,4 +115,29 @@
   </footer>
 
 </body>
+  <!-- スクロール連動アニメーションJavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // アニメーションさせたい要素にクラスを付与
+      const targets = document.querySelectorAll('.profile-card, .work-card, .detail-card, .section-title');
+      
+      targets.forEach(target => {
+        target.classList.add('fade-in');
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      targets.forEach(target => observer.observe(target));
+    });
+  </script>
+</body>
+</html>
 </html>
