@@ -1,168 +1,285 @@
-@charset "UTF-8";
+/* ==========================================
+   Base Styles & Variables
+   ========================================== */
+:root {
+  --primary-color: #0066cc;       /* メインの青 */
+  --primary-light: #e6f2ff;       /* 明るい背景用の薄い青 */
+  --primary-hover: #0052a3;       /* ホバー時の濃い青 */
+  --accent-color: #00b4d8;        /* アクセント用の水色 */
+  --text-color: #2b303a;          /* メインテキスト色 */
+  --text-muted: #6c757d;          /* 控えめなテキスト色 */
+  --bg-color: #f8fafc;            /* ページ全体のベース背景 */
+  --card-bg: #ffffff;             /* カード背景 */
+  --border-color: #e2e8f0;        /* 枠線 */
+  --shadow: 0 4px 12px rgba(0, 102, 204, 0.08); /* 柔らかな青みのある影 */
+  --radius: 12px;                  /* 角丸のサイズ */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-	margin: 0;
-	padding: 0;
-	font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-	line-height: 1.6;
-    font-size: 16px;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
-#header-container {
-  margin: 0 auto;
-  width: 694px;
-}
-header {
-	background-color: #214555;
-}
-#head-inner {
-    padding: 25px 0;
-}
-h1 {
-	font-size: 26px;
-	font-weight: bold;
-	padding: 10px 0 0 0;
-	margin: 0;
-	color: #f3e6d2;
-}
-h1 a {
-	font-weight: bold;
-	color: #f3e6d2;
-	text-decoration: none;
-}
-h1 a:hover {
-	color: #e8f3f9;
-	text-decoration: none;
-}
-.description {
-	line-height: 1.2;
-	color: #f3f2eb;
-	margin: 0.5em 0 1em 0;
-}
-h2 {
-	font-size: 22px;
-	margin: 0;
-	padding: 4px 0;
-	border-bottom: 1px solid #999;
-}
-#content-wrapper {margin: 0 auto;
-    width: 694px;}
-main {
-	color: #333;
-}
-#inner {
-	padding: 20px 0 0 0;
-}
-ul {
-	margin: 0 0 0 1em;
-	padding: 0;
-}
-li {
-	list-style: disc;
-}
-p {
-	margin: 1em 0;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border: 0;
-}
-hr {
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	border-color: #ccc;
-	height: 1px;
-}
+
 a {
-	font-weight: normal;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-aside {
 
+a:hover {
+  color: var(--primary-hover);
 }
-#middle-inner {
-	padding: 20px 0 20px 0;
-}
-.side-title {
-	padding: 7px 16px 7px 16px;
-	background-color: #f1f1f1;
-	color: #333;
-	font-weight: bold;
-	border: 1px solid #ccc;
-	margin-bottom: 10px;
-	border-radius: 5px;
-}
-.side {
-	margin: 0 0 10px 0;
-	padding: 2px 8px 8px 7px;
-	background-color: #fcfcfc;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	border-radius: 5px;
-}
-.side ul {
-	margin: 0 0 0 10px;
-	padding: 0;
-}
-.side li {
-	list-style: none;
-	margin-bottom: 0.5em;
-}
-.side li a {
-	text-decoration: none;
-	color: #214555;
-}
-.side li a:hover {
-	text-decoration: underline;
-}
-footer {
-	font-size: 15px;
-	height: 100px;
-	clear: both;
-	text-align: center;
-}
-blockquote {
-	border: 1px solid #ccc;
-	padding: 5px;
-	margin: 10px;
-}
-@media screen and (max-width: 767px) {
-#header-container {
-    margin: 0;
-	width: 100%;
-}
-header {
 
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-#head-inner {
-    padding: 25px 10px;
-	background-color: #214555;
+
+/* ==========================================
+   Header
+   ========================================== */
+.header {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
-.description {
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
 }
-#content-wrapper {
-margin: 0;
-	width: 100%;}
-main {
-width: 100%;
-	color: #333;
+
+.logo a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
-#inner {
-	padding: 20px 10px 0 10px;
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
 }
-aside {
-width: 100%;
+
+.nav a {
+  font-weight: 500;
+  color: var(--text-color);
 }
-#middle-inner {
-	padding: 10px 10px 20px 10px;
+
+.nav a:hover {
+  color: var(--primary-color);
 }
-h1 {
-	font-size: 20px;
+
+/* ==========================================
+   Hero Section
+   ========================================== */
+.hero {
+  background: linear-gradient(135deg, #e6f2ff 0%, #cce5ff 100%);
+  color: var(--primary-color);
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 1px solid var(--border-color);
 }
-h2 {
-	font-size: 18px;
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
-h3 {
-	font-size: 16px;
+
+.hero p {
+  color: #334155;
+  font-size: 1rem;
 }
-h4 {
-	font-size: 14px;
+
+/* ==========================================
+   Main Content & Sections
+   ========================================== */
+.section {
+  padding: 60px 0;
 }
+
+.section-title {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* About Section */
+.about-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.about-text h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin-top: 15px;
+}
+
+.skills-list li {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Works Grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.work-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+}
+
+.work-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.work-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.work-title {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.work-description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff;
+}
+
+/* Contact Section */
+.contact-box {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.contact-btn:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+.footer {
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  padding: 20px 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
 }
