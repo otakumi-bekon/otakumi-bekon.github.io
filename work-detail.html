@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品詳細 | 作品タイトル - PORTFOLIO</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Orbitron & Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- トップのダークブルーヘッダー -->
+  <header class="top-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">PORTFOLIO</a>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="main-container">
+
+    <!-- 1. 作品タイトル -->
+    <div class="detail-header">
+      <a href="index.html" class="back-link">← TOPへ戻る</a>
+      <span class="detail-tag">Game / Hardware</span>
+      <h1 class="detail-title">作品タイトル</h1>
+    </div>
+
+    <!-- 作品内容メインカード -->
+    <article class="detail-card">
+
+      <!-- 2. 作品画像 -->
+      <section class="detail-section">
+        <h2 class="section-label">01. GALLERY</h2>
+        <div class="media-container">
+          <img src="https://via.placeholder.com/900x500/092070/00d2ff?text=Work+Main+Image" alt="作品画像" class="detail-image">
+        </div>
+      </section>
+
+      <!-- 3. 作品動画 -->
+      <section class="detail-section">
+        <h2 class="section-label">02. MOVIE</h2>
+        <div class="media-container video-wrapper">
+          <!-- YouTube埋め込みの場合（embed用のURLをsrcに設定） -->
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="作品プロモーション動画" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <!-- ローカル動画を使う場合は以下に差替え可能です
+          <video controls poster="https://via.placeholder.com/900x500">
+            <source src="video.mp4" type="video/mp4">
+          </video>
+          -->
+        </div>
+      </section>
+
+      <!-- 4. 自身の開発担当箇所 -->
+      <section class="detail-section">
+        <h2 class="section-label">03. MY ROLE</h2>
+        <div class="content-box">
+          <ul class="role-list">
+            <li><strong>担当領域:</strong> 独自物理コントローラーの設計・実装 / C++ GDExtensionモジュール開発</li>
+            <li><strong>ハードウェア:</strong> マイコン（M5StickC Plus2）、3軸加速度センサー制御・シリアル通信</li>
+            <li><strong>ソフトウェア:</strong> OpenCVを用いた画像認識処理、Godot Engine（GDScript）統合</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. ゲーム内容 -->
+      <section class="detail-section">
+        <h2 class="section-label">04. GAME OVERVIEW</h2>
+        <div class="content-box">
+          <p class="text-block">
+            身の回りの日常品をそのままゲームコントローラーとして使用する体験型リズムゲームです。加速度センサーを搭載したジョッキ型デバイスを傾けたり乾杯させたりすることで、画面上のノーツと連動した直感的な操作が楽しめます。
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. ゲームに込めた思い -->
+      <section class="detail-section">
+        <h2 class="section-label">05. CONCEPT & THOUGHTS</h2>
+        <div class="content-box concept-box">
+          <p class="text-block">
+            「ふだん使うものが、ゲームになる。」というコンセプトのもと、プレイヤーが説明書なしで直感的に遊べる体感設計を目指しました。デジタル画面の演出だけでなく、手元にある実物触感やノイズを取り除いたセンサー入力制御にこだわり、ゲームセンターのような没入感を構築しています。
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. 展示＆発表記録 -->
+      <section class="detail-section">
+        <h2 class="section-label">06. EXHIBITION & AWARDS</h2>
+        <div class="content-box">
+          <ul class="history-list">
+            <li>
+              <span class="history-date">2026.09</span>
+              <span class="history-event">大学祭 作品展示ブース出展（インタラクティブ体験コーナー）</span>
+            </li>
+            <li>
+              <span class="history-date">2026.08</span>
+              <span class="history-event">インディーゲーム展示イベント 出展＆口頭発表</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 戻るボタン（下部） -->
+      <div class="detail-footer-btn">
+        <a href="index.html" class="cyber-btn big-btn"><span class="btn-label">← WORKS 一覧に戻る</span></a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 太田拓海 / Unuse All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
