@@ -1,14 +1,16 @@
 /* ==========================================
-   Base & Cyber Blue Variables
+   Base & Cyber Blue Color Theme
    ========================================== */
 :root {
-  --bg-dark-blue: #092070;       /* 右側背景のディープブルー */
-  --bg-pattern-blue: #0b2785;    /* パターン用の少し明るい青 */
-  --neon-cyan: #00d2ff;          /* サイバーライン・枠線用の鮮やかなシアン */
-  --text-dark: #1e293b;          /* 左側の文字色 */
-  --text-light: #ffffff;         /* 右側の文字色 */
-  --card-bg-left: #ffffff;       /* 左側カード背景 */
+  --header-bg: #030d36;          /* 一番上の濃いダークブルー */
+  --bg-color: #f0f6ff;           /* 全体の明るい青みのある背景 */
+  --card-bg: #ffffff;            /* 各カードの白い背景 */
+  --dark-blue: #092070;          /* ボタンやテキストのベース青 */
+  --neon-cyan: #00d2ff;          /* サイバーライン・ホバー用のシアン */
+  --text-main: #1e293b;
+  --text-sub: #64748b;
   --border-cyan: rgba(0, 210, 255, 0.6);
+  --box-shadow: 0 10px 30px rgba(9, 32, 112, 0.08);
 }
 
 * {
@@ -19,146 +21,82 @@
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  background-color: #0d1117;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
 /* ==========================================
-   名刺カード全体（レスポンシブ・コンテナ）
+   1. トップヘッダー（画像上部の青い帯）
    ========================================== */
-.business-card {
-  display: flex;
+.top-header {
+  background-color: var(--header-bg);
+  height: 90px;
   width: 100%;
-  max-width: 900px;
-  min-height: 500px;
-  background-color: var(--card-bg-left);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 210, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid var(--neon-cyan);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-inner .logo {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--neon-cyan);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
 }
 
 /* ==========================================
-   左側：ホワイトエリア
+   2. メインコンテナ
    ========================================== */
-.card-left {
-  flex: 1.2;
-  padding: 45px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--card-bg-left);
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px 80px 20px;
 }
 
-.job-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  letter-spacing: 0.05em;
-}
-
-.name-ja {
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: #0b1953;
-  margin: 10px 0 2px 0;
-  letter-spacing: 0.15em;
-}
-
-.name-en {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #0b1953;
-  letter-spacing: 0.08em;
-}
-
-/* ダイヤ装飾付きの区切り線 */
-.divider {
-  height: 2px;
-  background: linear-gradient(90deg, #0b1953 0%, var(--neon-cyan) 50%, #0b1953 100%);
-  margin: 30px 0;
+/* ==========================================
+   3. タイトル & 基本情報（中央上部）
+   ========================================== */
+.profile-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-cyan);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  padding: 35px;
+  margin: 0 auto 50px auto;
+  max-width: 700px;
   position: relative;
+  overflow: hidden;
 }
 
-.divider::before, .divider::after {
+/* 上部にシアンのグラデーションバー */
+.profile-card::before {
   content: '';
   position: absolute;
-  top: -4px;
-  width: 10px;
-  height: 10px;
-  background-color: #0b1953;
-  transform: rotate(45deg);
-}
-.divider::before { left: 10%; }
-.divider::after { right: 10%; }
-
-.info-group {
-  margin-bottom: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--dark-blue), var(--neon-cyan), var(--dark-blue));
 }
 
-.info-label {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #64748b;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.info-value {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-dark);
-}
-
-.tech-stack {
-  font-family: 'Orbitron', 'Noto Sans JP', sans-serif;
-  color: #0b1953;
-  font-weight: 600;
-}
-
-/* ==========================================
-   右側：ブルーサイバーエリア
-   ========================================== */
-.card-right {
-  flex: 1;
-  background-color: var(--bg-dark-blue);
-  background-image: 
-    radial-gradient(var(--bg-pattern-blue) 15%, transparent 16%),
-    radial-gradient(var(--bg-pattern-blue) 15%, transparent 16%);
-  background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
-  padding: 25px;
+.profile-main {
   display: flex;
-  flex-direction: column;
-}
-
-/* サイバーネオン枠線 */
-.frame-border {
-  border: 2px solid var(--neon-cyan);
-  border-radius: 8px;
-  height: 100%;
-  padding: 25px 20px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  box-shadow: inset 0 0 15px rgba(0, 210, 255, 0.3);
-  position: relative;
+  gap: 25px;
 }
 
-/* 丸型プロフィール画像 */
 .avatar-wrapper {
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  border: 3px solid var(--neon-cyan);
+  border: 2.5px solid var(--neon-cyan);
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
-  margin-bottom: 15px;
+  box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+  flex-shrink: 0;
 }
 
 .avatar-img {
@@ -167,24 +105,79 @@ body {
   object-fit: cover;
 }
 
-/* ボタンレイアウト */
+.job-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-sub);
+}
+
+.name-ja {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--dark-blue);
+  letter-spacing: 0.1em;
+  margin: 2px 0;
+}
+
+.name-en {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--dark-blue);
+  letter-spacing: 0.05em;
+}
+
+/* ダイヤ付き線 */
+.divider {
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--dark-blue) 0%, var(--neon-cyan) 50%, var(--dark-blue) 100%);
+  margin: 20px 0;
+  position: relative;
+}
+
+.profile-details {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-sub);
+  display: block;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.tech-stack {
+  font-family: 'Orbitron', 'Noto Sans JP', sans-serif;
+  color: var(--dark-blue);
+}
+
+/* --- 採用されたサイバーボタン --- */
 .link-grid {
-  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 12px;
-  margin-bottom: 15px;
 }
 
 .cyber-btn {
-  background: rgba(11, 39, 133, 0.7);
+  background: var(--dark-blue);
   border: 1.5px solid var(--neon-cyan);
   border-radius: 6px;
-  padding: 10px 8px;
+  padding: 10px 12px;
   text-align: center;
   text-decoration: none;
   transition: all 0.2s ease;
   box-shadow: 0 0 8px rgba(0, 210, 255, 0.2);
+  display: inline-block;
 }
 
 .cyber-btn:hover {
@@ -195,67 +188,133 @@ body {
 
 .btn-label {
   font-family: 'Orbitron', 'Noto Sans JP', sans-serif;
-  color: var(--text-light);
-  font-size: 0.85rem;
+  color: #ffffff;
+  font-size: 0.8rem;
   font-weight: 600;
   display: block;
 }
 
 .cyber-btn:hover .btn-label {
-  color: var(--bg-dark-blue);
-}
-
-/* 右下：好きなもの（ターゲット枠風） */
-.favorite-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-.target-corner {
-  position: relative;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed var(--neon-cyan);
-  border-radius: 8px;
-}
-
-.fav-icon {
-  font-size: 1.5rem;
-}
-
-.fav-label {
-  color: var(--neon-cyan);
-  font-size: 0.75rem;
-  font-weight: 700;
+  color: var(--dark-blue);
 }
 
 /* ==========================================
-   レスポンシブ対応（スマートフォン表示）
+   4. 作品セクション (下部2列レイアウト)
+   ========================================== */
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--dark-blue);
+  margin-bottom: 30px;
+  letter-spacing: 0.1em;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.work-card {
+  background-color: var(--card-bg);
+  border: 1.5px solid var(--border-cyan);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 210, 255, 0.2);
+}
+
+.work-image-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: var(--dark-blue);
+}
+
+.work-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--dark-blue);
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.work-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.work-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin-bottom: 8px;
+}
+
+.work-description {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.mini-btn {
+  width: 100%;
+  padding: 8px;
+}
+
+/* ==========================================
+   5. フッター
+   ========================================== */
+.footer {
+  text-align: center;
+  padding: 25px 0;
+  background-color: var(--header-bg);
+  color: #8a99ad;
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border-cyan);
+}
+
+/* ==========================================
+   レスポンシブ対応 (スマホ等)
    ========================================== */
 @media (max-width: 768px) {
-  .business-card {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-main {
     flex-direction: column;
-  }
-  
-  .card-left, .card-right {
-    flex: none;
-    width: 100%;
+    text-align: center;
   }
 
-  .card-left {
-    padding: 30px 20px;
-  }
-
-  .name-ja {
-    font-size: 2.2rem;
+  .profile-details {
+    flex-direction: column;
+    align-items: center;
   }
 
   .link-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
