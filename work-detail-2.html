@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>草刈りロボット自動制御システム | 作品詳細 - PORTFOLIO</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Orbitron & Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- トップのダークブルーヘッダー -->
+  <header class="top-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">PORTFOLIO</a>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="main-container">
+
+    <!-- 1. 作品タイトル -->
+    <div class="detail-header">
+      <a href="index.html" class="back-link">← TOPへ戻る</a>
+      <br>
+      <span class="detail-tag">Research / C++ / OpenCV / Image Processing</span>
+      <h1 class="detail-title">草刈りロボット自動制御システム</h1>
+    </div>
+
+    <!-- 作品内容メインカード -->
+    <article class="detail-card">
+
+      <!-- 2. 作品画像 -->
+      <section class="detail-section">
+        <h2 class="section-label">01. GALLERY</h2>
+        <div class="media-container">
+          <!-- 画像挿入の準備（パスを後から書き換えてください） -->
+          <img src="https://via.placeholder.com/900x500/092070/00d2ff?text=草刈りロボット+メイン画像" alt="草刈りロボットシステム 作品画像" class="detail-image">
+        </div>
+      </section>
+
+      <!-- 3. 作品動画 -->
+      <section class="detail-section">
+        <h2 class="section-label">02. MOVIE</h2>
+        <div class="media-container video-wrapper">
+          <!-- 動画挿入の準備（YouTube埋め込みや<video>タグに置き換えてご使用ください） -->
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="草刈りロボット動作動画" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <!-- 4. 自身の開発担当箇所 -->
+      <section class="detail-section">
+        <h2 class="section-label">03. MY ROLE</h2>
+        <div class="content-box">
+          <ul class="role-list">
+            <li><strong>画像処理システム全般の開発:</strong> C++ / OpenCV</li>
+            <li><strong>外部カメラを用いたトラッキング・エリア認識の設計・実装</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. ゲーム・システム内容（研究概要） -->
+      <section class="detail-section">
+        <h2 class="section-label">04. SYSTEM OVERVIEW</h2>
+        <div class="content-box">
+          <p class="text-block">
+            休耕田に生い茂る雑草の刈り取り作業は、モチベーションの維持が難しく生産性も低いという課題に着目し、休耕田内部を自動走査する草刈りロボットの制御システム開発に卒業研究として取り組みました。
+            
+            システムの特徴として、走査したいエリアの外部に設置した定点カメラから、ロボットの位置と対象エリアをリアルタイムで認識。エリア内をくまなく全域走査するための画像処理システムを構築しました。
+            
+            また、実際の運用現場を見据え、電波の届かない山間地での動作考慮や、設置コストの抑制、多様な形状の田んぼへの適応など、連携先の自治体様と何度もヒアリングや話し合いを重ね、現場のニーズに合わせた機能要件のすり合わせと調整を行いました。
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. 込めた思い・学び -->
+      <section class="detail-section">
+        <h2 class="section-label">05. CONCEPT & THOUGHTS</h2>
+        <div class="content-box concept-box">
+          <p class="text-block">
+            実機を用いた完全自動制御の達成までは至りませんでしたが、実際の社会課題（農地の維持・管理負担の軽減）を起点に、ハードウェアの制約や現場の運用要件を考慮したシステム設計の難しさと面白さを深く学びました。
+            何より、外部カメラ映像からのロバストな位置認識やトラッキング処理を通じて、C++およびOpenCVを用いた実践的な画像処理・コンピュータビジョンの知見を大きく広げることができた研究です。
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. 展示＆発表記録 -->
+      <section class="detail-section">
+        <h2 class="section-label">06. EXHIBITION & AWARDS</h2>
+        <div class="content-box">
+          <ul class="history-list">
+            <li>
+              <span class="history-date">2026</span>
+              <div class="history-content">
+                <span class="history-event">DIA2026 ポスター発表</span>
+                <a href="https://www.tc-iaip.org/dia/2026/" target="_blank" rel="noopener noreferrer" class="history-link">公式サイト ↗</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 戻るボタン（下部） -->
+      <div class="detail-footer-btn">
+        <a href="index.html" class="cyber-btn big-btn"><span class="btn-label">← WORKS 一覧に戻る</span></a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 太田拓海 / Unuse All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
