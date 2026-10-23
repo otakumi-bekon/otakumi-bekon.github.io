@@ -72,7 +72,6 @@ body {
   overflow: hidden;
 }
 
-/* 上部にシアンのグラデーションバー */
 .profile-card::before {
   content: '';
   position: absolute;
@@ -127,7 +126,6 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ダイヤ付き線 */
 .divider {
   height: 1.5px;
   background: linear-gradient(90deg, var(--dark-blue) 0%, var(--neon-cyan) 50%, var(--dark-blue) 100%);
@@ -161,7 +159,7 @@ body {
   color: var(--dark-blue);
 }
 
-/* --- 採用されたサイバーボタン --- */
+/* --- サイバーボタン --- */
 .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -222,14 +220,15 @@ body {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: var(--box-shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .work-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 210, 255, 0.2);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
 }
 
 .work-image-container {
@@ -237,12 +236,18 @@ body {
   width: 100%;
   height: 220px;
   background-color: var(--dark-blue);
+  overflow: hidden;
 }
 
 .work-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.work-card:hover .work-image {
+  transform: scale(1.08);
 }
 
 .work-tag {
@@ -297,33 +302,8 @@ body {
 }
 
 /* ==========================================
-   レスポンシブ対応 (スマホ等)
+   6. 作品詳細ページ
    ========================================== */
-@media (max-width: 768px) {
-  .works-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .profile-main {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .profile-details {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .link-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* ==========================================
-   6. 作品詳細ページ (work-detail.html)
-   ========================================== */
-
-/* 詳細ヘッダー */
 .detail-header {
   margin-bottom: 30px;
 }
@@ -361,7 +341,6 @@ body {
   line-height: 1.3;
 }
 
-/* 詳細カードコンテナ */
 .detail-card {
   background-color: var(--card-bg);
   border: 2px solid var(--border-cyan);
@@ -382,7 +361,6 @@ body {
   background: linear-gradient(90deg, var(--dark-blue), var(--neon-cyan), var(--dark-blue));
 }
 
-/* 各セクションブロック */
 .detail-section {
   margin-bottom: 40px;
 }
@@ -397,7 +375,6 @@ body {
   padding-bottom: 6px;
 }
 
-/* メディア（画像・動画）スタイル */
 .media-container {
   width: 100%;
   border-radius: 8px;
@@ -413,10 +390,9 @@ body {
   display: block;
 }
 
-/* アスペクト比16:9を維持する動画プレイヤー */
 .video-wrapper {
   position: relative;
-  padding-top: 56.25%; /* 16:9 */
+  padding-top: 56.25%;
   height: 0;
 }
 
@@ -429,7 +405,6 @@ body {
   height: 100%;
 }
 
-/* コンテンツボックス */
 .content-box {
   background-color: #f8fafc;
   border-left: 4px solid var(--neon-cyan);
@@ -444,7 +419,6 @@ body {
   white-space: pre-line;
 }
 
-/* 開発担当箇所リスト */
 .role-list {
   list-style: none;
   display: flex;
@@ -472,7 +446,6 @@ body {
   color: var(--dark-blue);
 }
 
-/* 展示・発表記録（CSS調整） */
 .history-list {
   list-style: none;
   display: flex;
@@ -486,6 +459,18 @@ body {
   gap: 15px;
   font-size: 0.95rem;
   flex-wrap: wrap;
+}
+
+.history-date {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: var(--dark-blue);
+  background-color: var(--bg-color);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-cyan);
+  font-size: 0.85rem;
+  flex-shrink: 0;
 }
 
 .history-content {
@@ -516,7 +501,6 @@ body {
   color: var(--dark-blue);
 }
 
-/* 下部ボタン */
 .detail-footer-btn {
   text-align: center;
   margin-top: 50px;
@@ -528,27 +512,9 @@ body {
   padding: 12px 30px;
 }
 
-/* スマホ表示対応 */
-@media (max-width: 768px) {
-  .detail-card {
-    padding: 20px;
-  }
-
-  .detail-title {
-    font-size: 1.7rem;
-  }
-
-  .history-list li {
-    flex-direction: column;
-    gap: 4px;
-  }
-}
-
 /* ==========================================
-   7. アニメーション & インタラクション強化
+   7. アニメーション & インタラクション
    ========================================== */
-
-/* ① ページ読み込み時の要素フワッと表示 (Fade-in-Up) */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -560,7 +526,6 @@ body {
   transform: translateY(0);
 }
 
-/* ② ヘッダーロゴのグロー（発光）ホバー効果 */
 .header-inner .logo {
   transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -570,31 +535,6 @@ body {
   transform: scale(1.03);
 }
 
-/* ③ 作品カードの画像ズーム＆枠線発光 */
-.work-image-container {
-  overflow: hidden;
-}
-
-.work-image {
-  transition: transform 0.5s ease;
-}
-
-.work-card:hover .work-image {
-  transform: scale(1.08); /* ホバー時に画像をゆっくり拡大 */
-}
-
-.work-card {
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-              box-shadow 0.3s ease, 
-              border-color 0.3s ease;
-}
-
-.work-card:hover {
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
-}
-
-/* ④ プロフィールアバターのサイバー回転リング効果 */
 .avatar-wrapper {
   position: relative;
 }
@@ -613,15 +553,10 @@ body {
 }
 
 @keyframes rotate-ring {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* ⑤ サイバーボタンのパルス波紋効果 */
 .cyber-btn {
   position: relative;
   overflow: hidden;
@@ -643,4 +578,41 @@ body {
 .cyber-btn:hover::before {
   width: 200px;
   height: 200px;
+}
+
+/* ==========================================
+   レスポンシブ対応 (スマホ等)
+   ========================================== */
+@media (max-width: 768px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .detail-card {
+    padding: 20px;
+  }
+
+  .detail-title {
+    font-size: 1.7rem;
+  }
+
+  .history-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }
